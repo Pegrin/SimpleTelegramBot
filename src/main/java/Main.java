@@ -1,3 +1,4 @@
+import com.beust.jcommander.JCommander;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
@@ -10,9 +11,12 @@ public class Main {
     ApiContextInitializer.init();
 
     TelegramBotsApi botsApi = new TelegramBotsApi();
-
+    MyBot bot = new MyBot();
+    JCommander.newBuilder().addObject(bot).build().parse(args);
     try {
-      botsApi.registerBot(new MyBot());
+      System.out.println("Registering bot");
+      botsApi.registerBot(bot);
+      System.out.println("Registering successful");
     } catch (TelegramApiException e) {
       e.printStackTrace();
     }
