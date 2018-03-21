@@ -6,12 +6,10 @@ import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
-import java.util.List;
-
 /**
  * Основной класс бота
  */
-public class MyBot extends TelegramLongPollingBot {
+public class MyLongPollBot extends TelegramLongPollingBot {
   @Parameter(names = {"-n", "--name"}, required = true, description = "Bot username in telegram")
   private static String botName;
   @Parameter(names = {"-t", "--token"}, required = true, description = "Bot token")
