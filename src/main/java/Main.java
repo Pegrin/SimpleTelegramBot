@@ -2,10 +2,8 @@ import com.beust.jcommander.JCommander;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
+import org.wtiger.telegram.bot.MyBot;
 
-/**
- * Created by SBT-khayrutdinov-mr on 20.03.2018.
- */
 public class Main {
   public static void main(String[] args) {
     ApiContextInitializer.init();

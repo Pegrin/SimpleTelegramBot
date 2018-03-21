@@ -1,3 +1,5 @@
+package org.wtiger.telegram.bot;
+
 import com.beust.jcommander.Parameter;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Update;
@@ -7,7 +9,7 @@ import org.telegram.telegrambots.exceptions.TelegramApiException;
 import java.util.List;
 
 /**
- * Created by SBT-khayrutdinov-mr on 20.03.2018.
+ * Основной класс бота
  */
 public class MyBot extends TelegramLongPollingBot {
   @Parameter(names = {"-n", "--name"}, required = true, description = "Bot username in telegram")
@@ -28,10 +30,6 @@ public class MyBot extends TelegramLongPollingBot {
         e.printStackTrace();
       }
     }
-  }
-
-  public void onUpdatesReceived(List<Update> updates) {
-    updates.forEach(this::onUpdateReceived);
   }
 
   public String getBotUsername() {
